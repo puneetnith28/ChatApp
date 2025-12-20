@@ -1,0 +1,20 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "Real-time chat application with AI assistant",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend"
+  },
+  "keywords": ["chat", "mern", "socket.io"],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
