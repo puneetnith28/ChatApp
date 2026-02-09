@@ -12,13 +12,18 @@ dotenv.config({});
 
  
 const PORT = process.env.PORT || 5000;
+const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:3000")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
 
 // middleware
+app.set("trust proxy", 1);
 app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 app.use(cookieParser());
 const corsOption={
-    origin:'http://localhost:3000',
+    origin: allowedOrigins,
     credentials:true
 };
 app.use(cors(corsOption)); 

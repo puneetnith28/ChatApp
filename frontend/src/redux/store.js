@@ -17,6 +17,7 @@ import {
     key: 'root',
     version: 2,
     storage,
+    blacklist: ["socket"],
   }
 
   const rootReducer = combineReducers({
@@ -33,7 +34,8 @@ const store = configureStore({
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, "socket/setSocket"],
+        ignoredPaths: ["socket.socket"],
       },
     }),
 });
