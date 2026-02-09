@@ -35,7 +35,7 @@ const corsOption={
     optionsSuccessStatus: 204
 };
 app.use(cors(corsOption)); 
-app.options("*", cors(corsOption));
+app.options(/.*/, cors(corsOption));
 
 
 // routes
