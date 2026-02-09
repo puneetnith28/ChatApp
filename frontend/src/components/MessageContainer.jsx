@@ -8,7 +8,7 @@ import { IoArrowBack } from "react-icons/io5";
 import { FaRobot } from "react-icons/fa";
 
 const MessageContainer = () => {
-    const { selectedUser, isChatbotSelected } = useSelector(store => store.user);
+    const { selectedUser, authUser, isChatbotSelected } = useSelector(store => store.user);
     const dispatch = useDispatch();
 
     const handleBack = () => {
