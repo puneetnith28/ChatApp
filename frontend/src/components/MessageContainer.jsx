@@ -1,18 +1,15 @@
-import React from 'react';
 import SendInput from './SendInput';
 import Messages from './Messages';
 import ChatBotMessages from './ChatBotMessages';
 import ChatBotInput from './ChatBotInput';
 import { useSelector, useDispatch } from "react-redux";
-import { setSelectedUser, setShowChatOnMobile, setIsChatbotSelected } from '../redux/userSlice';
+import { setShowChatOnMobile, setIsChatbotSelected } from '../redux/userSlice';
 import { IoArrowBack } from "react-icons/io5";
 import { FaRobot } from "react-icons/fa";
 
 const MessageContainer = () => {
-    const { selectedUser, authUser, onlineUsers, isChatbotSelected } = useSelector(store => store.user);
+    const { selectedUser, isChatbotSelected } = useSelector(store => store.user);
     const dispatch = useDispatch();
-
-    const isOnline = onlineUsers?.includes(selectedUser?._id);
 
     const handleBack = () => {
         dispatch(setShowChatOnMobile(false));

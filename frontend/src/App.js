@@ -1,7 +1,6 @@
 import Signup from "./components/Signup";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
 import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import { useEffect } from "react";
@@ -58,7 +57,7 @@ function App() {
         dispatch(setSocket(null));
       }
     }
-  }, [authUser]);
+  }, [authUser, dispatch, socket]);
 
   return (
     <div className="p-4 h-screen flex items-center justify-center">
