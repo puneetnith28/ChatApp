@@ -8,10 +8,8 @@ import store from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist';
 let persistor = persistStore(store);
-// process.env.BASE_URL
-export const BASE_URL= "https://chatapp-2-zkmq.onrender.com"
-// export const BASE_URL="http://localhost:8000";
 
+export const BASE_URL= process.env.BASE_URL || "http://localhost:8000";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
